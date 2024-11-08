@@ -1,0 +1,6 @@
+/* Background color for rooms container */
+.background-color {
+    background-color: #f0f8ff; /* Light blue color */
+    padding: 20px; /* Add padding */
+    border-radius: 8px; /* Rounded corners */
+}
