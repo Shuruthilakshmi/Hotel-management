@@ -1,0 +1,27 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Sign Up</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+        <a href="{% url 'login' %}" class="link">Already have an account? Login here</a>
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="{% static 'js/signup.js' %}"></script>
+</body>
+</html>

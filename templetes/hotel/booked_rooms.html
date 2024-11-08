@@ -1,0 +1,38 @@
+{% extends 'hotel/base.html' %}
+
+{% block title %}Booked Rooms{% endblock %}
+
+{% block content %}
+<h2>Booked Rooms</h2>
+{% if bookings %}
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Room No</th>
+                <th>Room Type</th>
+                <th>Check-in</th>
+                <th>Check-out</th>
+                <th>Actions</th> <!-- Added Actions column for Edit/Cancel -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in bookings %}
+            <tr>
+               <td>{{ booking.name }}</td>
+               <td>{{ booking.room.room_number }}</td>
+               <td>{{ booking.room.room_type }}</td>
+               <td>{{ booking.check_in }}</td>
+               <td>{{ booking.check_out }}</td>
+               <td>
+                   <a class="btn btn-primary" href="{% url 'edit_booking' booking.id %}">Edit</a> |
+                   <a class="btn btn-danger" href="{% url 'delete_booking' booking.id %}">Cancel</a>
+               </td>
+           </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No rooms are booked at the moment.</p>
+{% endif %}
+{% endblock %}

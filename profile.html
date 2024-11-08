@@ -1,0 +1,113 @@
+{% extends 'hotel/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<header>
+  <h1>Profile Page</h1>
+</header>
+  
+  <div class="profile-container">
+    <h2>Your Profile</h2>
+    <form method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        {{ u_form|crispy }}
+      </div>
+      <button type="submit">Update Profile</button>
+    </form>
+  </div>
+  <footer>
+    <nav>
+      <a href="{% url 'home' %}">BACK TO HOME </a>  <!-- Link to the Home page -->
+    </nav>
+  </footer>
+
+ 
+  <style>
+    /* General Styling for Profile Page */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #e0f7fa;  /* Light cyan background */
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;  /* Full viewport height */
+        justify-content: space-between;  /* Space between header, content, and footer */
+    }
+
+    /* Header Styling */
+    header {
+        background-color: lightcyan;  /* Header background color */
+        color: black;  /* Text color */
+        text-align: center;  /* Center text */
+        padding: 10px 0;  /* Vertical padding */
+    }
+
+    /* Profile Container */
+    .profile-container {
+        background-color: white;  /* White background for the form */
+        width: 450px;  /* Width of the profile box */
+        padding: 20px;  /* Padding inside the container */
+        border-radius: 8px;  /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+        margin: auto;  /* Center the profile container */
+        flex: 1;  /* Allow the profile container to take up available space */
+        display: flex; /* Use flexbox to center content */
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    /* Header Styling for Profile Form */
+    .profile-container h2 {
+        margin-bottom: 20px;  /* Space below the heading */
+        color: #333;  /* Dark grey color for text */
+        text-align: center; /* Center heading text */
+    }
+
+    /* Form Group Styling */
+    .form-group {
+        width: 100%;  /* Full width of the container */
+        display: flex; /* Use flexbox to align items in a row */
+        flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        gap: 10px; /* Space between form elements */
+    }
+
+    /* Button Styling */
+    .profile-container button {
+        width: 100%;  /* Full width button */
+        background-color: #4CAF50;  /* Green background */
+        color: white;  /* White text */
+        padding: 12px;  /* Padding inside the button */
+        border: none;  /* No border */
+        border-radius: 4px;  /* Slightly rounded corners */
+        font-size: 16px;  /* Font size */
+        cursor: pointer;  /* Pointer cursor on hover */
+        transition: background-color 0.3s ease;  /* Smooth background transition */
+        margin-top: 10px;  /* Margin above the button */
+    }
+
+    .profile-container button:hover {
+        background-color: #45a049;  /* Darker green on hover */
+    }
+
+    /* Footer Styli  /* Vertical padding */
+    footer {
+        background-color: lightcyan;  /* Footer background color */
+        color: white;  /* Text color */
+        text-align: center;  /* Center text */
+        padding: 10px 0;  /* Vertical padding */
+    } 
+    
+
+    /* Responsive for mobile */
+    @media only screen and (max-width: 600px) {
+        .profile-container {
+            width: 90%;  /* Full width on small screens */
+        }
+
+        .form-group {
+            flex-direction: column; /* Stack items vertically on small screens */
+        }
+    }
+  </style>
+{% endblock %}

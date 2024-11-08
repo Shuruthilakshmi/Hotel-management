@@ -1,0 +1,60 @@
+{% extends 'hotel/base.html' %}
+
+{% block title %}Update Rooms{% endblock %}
+
+{% block content %}
+<center>
+<h2>Update Room</h2></center>
+
+<!-- Room update form container -->
+<div class="room-update-container">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-success" type="submit">Update Room</button>
+    </form>
+</div>
+
+<!-- Internal CSS styles -->
+<style>
+    /* Container for the update room form */
+    .room-update-container {
+        background-color: lightcyan; /* Light grey background */
+        padding: 20px; /* Space around the content */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+        max-width: 600px; /* Limit the width of the form */
+        margin: 20px auto; /* Center the form on the page */
+    }
+
+    /* Style for form elements */
+    input[type="text"],
+    input[type="number"],
+    textarea,
+    select {
+        width: 100%; /* Full width of the container */
+        padding: 10px; /* Inner space for comfort */
+        margin-top: 5px; /* Space above fields */
+        border: 1px solid #ccc; /* Light grey border */
+        border-radius: 5px; /* Rounded corners */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    /* Style for the button */
+    button.btn-success {
+        background-color: #28a745; /* Bootstrap success color */
+        color: white; /* White text for contrast */
+        padding: 10px 15px; /* Comfortable padding */
+        border: none; /* Remove default border */
+        border-radius: 5px; /* Rounded corners */
+        font-size: 16px; /* Font size */
+        transition: background-color 0.3s ease; /* Smooth transition */
+        cursor: pointer; /* Pointer cursor on hover */
+    }
+
+    button.btn-success:hover {
+        background-color: #218838; /* Darker green on hover */
+    }
+</style>
+
+{% endblock %}

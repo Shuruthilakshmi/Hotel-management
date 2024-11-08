@@ -1,0 +1,51 @@
+{% extends 'hotel/base.html' %}
+
+{% block title %}Booking Confirmation{% endblock %}
+
+{% block content %}
+<h1>Booking Confirmed</h1>
+<p>Your room has been booked successfully.</p>
+<a class="btn" href="{% url 'room_list' %}">Go back to room list</a>
+
+<style>
+    /* General styling for the confirmation page */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #e0f7fa;  /* Light cyan background */
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;  /* Full viewport height */
+        justify-content: center;  /* Center vertically */
+        align-items: center;  /* Center horizontally */
+        text-align: center; /* Center text */
+    }
+
+    /* Heading styling */
+    h1 {
+        color: #4CAF50;  /* Green color for the heading */
+        margin-bottom: 20px;  /* Space below the heading */
+    }
+
+    /* Paragraph styling */
+    p {
+        color: #333;  /* Dark grey color for text */
+        margin-bottom: 30px;  /* Space below the paragraph */
+    }
+
+    /* Button styling */
+    .btn {
+        background-color: #4CAF50;  /* Green background */
+        color: white;  /* White text */
+        padding: 12px 20px;  /* Padding inside the button */
+        text-decoration: none;  /* Remove underline */
+        border-radius: 4px;  /* Rounded corners */
+        transition: background-color 0.3s ease;  /* Smooth transition */
+    }
+
+    /* Button hover effect */
+    .btn:hover {
+        background-color: #45a049;  /* Darker green on hover */
+    }
+</style>
+{% endblock %}

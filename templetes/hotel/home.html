@@ -1,0 +1,29 @@
+{% extends 'hotel/base.html' %}
+{% load static %}
+
+{% block title %}home{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #f0f0f0; /* Light gray background */
+        font-family: Arial, sans-serif; /* Font styling */
+    }
+
+    h2 {
+        color: #2c3e50; /* Dark blue color */
+        text-align: center; /* Center the heading */
+        margin-top: 20px; /* Space above the heading */
+    }
+
+    img {
+        border: 2px solid #2c3e50; /* Border around the image */
+        border-radius: 10px; /* Rounded corners */
+        margin-top: 20px; /* Space above the image */
+    }
+</style>
+
+<h2>WELCOME TO TRAVELLER'S HOTEL</h2>
+<img src="{% static 'images/home.jpg' %}" alt="home" width="100%" height="500">
+
+{% endblock %}

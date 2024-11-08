@@ -1,0 +1,8 @@
+<h1>Delete Booking</h1>
+<p>Are you sure you want to delete the booking for {{ booking.room.name }} from {{ booking.check_in }} to {{ booking.check_out }}?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, delete this booking</button>
+</form>
+<a href="{% url 'room_list' %}">Cancel</a>
